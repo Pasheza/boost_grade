@@ -1,3 +1,4 @@
+import 'package:boost_grade/four_squares.dart';
 import 'package:flutter/material.dart';
 
 import 'codelab.dart';
@@ -41,7 +42,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children:  <Widget>[
-            MainPageButton(title: '4 квадрата', onPressed: (){}),
+            MainPageButton(title: '4 квадрата', onPressed: (){
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const FourSquares()),
+                );
+            }),
             MainPageButton(title: 'Цветной список', onPressed: (){}),
             MainPageButton(title: 'Codelab', onPressed: (){
                 Navigator.push(
