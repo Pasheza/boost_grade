@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.title, style: const TextStyle(color: Colors.black)),
       ),
       body: Center(
         child: Column(
@@ -65,8 +65,8 @@ class MainPageButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(title),
-            const Icon(Icons.arrow_forward_outlined),
+            Text(title, style: const TextStyle(color: Colors.black)),
+            const Icon(Icons.arrow_forward_outlined, color: Colors.black,),
           ]),
       onPressed: () {},
       ),
