@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'codelab.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -38,11 +40,16 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: const <Widget>[
-            MainPageButton(title: '4 квадрата'),
-            MainPageButton(title: 'Цветной список'),
-            MainPageButton(title: 'Codelab'),
-            MainPageButton(title: 'Асинхронный запрос'),
+          children:  <Widget>[
+            MainPageButton(title: '4 квадрата', onPressed: (){}),
+            MainPageButton(title: 'Цветной список', onPressed: (){}),
+            MainPageButton(title: 'Codelab', onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CodelabPage()),
+                );
+            }),
+            MainPageButton(title: 'Асинхронный запрос', onPressed: (){}),
           ],
         ),
       ),
@@ -52,7 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
 class MainPageButton extends StatelessWidget {
   final String title;
-  const MainPageButton({Key? key, required this.title}) : super(key: key);
+  final VoidCallback? onPressed;
+  const MainPageButton({Key? key, required this.title, required this.onPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +76,7 @@ class MainPageButton extends StatelessWidget {
             Text(title),
             const Icon(Icons.arrow_forward_outlined),
           ]),
-      onPressed: () {},
+      onPressed: onPressed,
       ),
     );
   }
