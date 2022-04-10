@@ -1,4 +1,5 @@
 import 'package:boost_grade/four_squares.dart';
+import 'package:boost_grade/list.dart';
 import 'package:flutter/material.dart';
 
 import 'codelab.dart';
@@ -48,7 +49,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(builder: (context) => const FourSquares()),
                 );
             }),
-            MainPageButton(title: 'Цветной список', onPressed: (){}),
+            MainPageButton(title: 'Цветной список', onPressed: (){
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ListPage()),
+                );
+            }),
             MainPageButton(title: 'Codelab', onPressed: (){
                 Navigator.push(
                   context,

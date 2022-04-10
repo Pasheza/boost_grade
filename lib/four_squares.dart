@@ -32,19 +32,19 @@ class _FourSquaresState extends State<FourSquares> {
         children: <Widget>[
           Container(
             padding: const EdgeInsets.all(8),
-            color: _randomColor(),
+            color: randomColor(),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: _randomColor(),
+            color: randomColor(),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: _randomColor(),
+            color: randomColor(),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: _randomColor(),
+            color: randomColor(),
           ),
         ],
       )),
@@ -52,6 +52,6 @@ class _FourSquaresState extends State<FourSquares> {
   }
 }
 
-MaterialColor _randomColor() {
+MaterialColor randomColor() {
   return Colors.primaries[Random().nextInt(Colors.primaries.length)];
 }
