@@ -1,3 +1,4 @@
+import 'package:boost_grade/async_photo_list.dart';
 import 'package:boost_grade/four_squares.dart';
 import 'package:boost_grade/list.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +62,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(builder: (context) => const CodelabPage()),
                 );
             }),
-            MainPageButton(title: 'Асинхронный запрос', onPressed: (){}),
+            MainPageButton(title: 'Асинхронный запрос', onPressed: (){
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AsyncPhotoListPage()),
+                ); 
+            }),
           ],
         ),
       ),
