@@ -1,30 +1,26 @@
-import 'package:boost_grade/colors.dart';
+import 'package:boost_grade/resources/colors.dart';
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatefulWidget {
+import '../resources/pages_list.dart';
+
+class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          widget.title,
-          style: TextStyle(
-            color: black,
+          title,
+          style: Theme.of(context).textTheme.titleLarge!.apply(
             shadows: [
               Shadow(
                 color: black.withOpacity(0.4),
                 offset: const Offset(0, 3),
                 blurRadius: 7,
-              )
+             )
             ]
           ),
         ),
@@ -33,10 +29,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: const <Widget>[
-            MainPageButton(title: '4 квадрата'),
-            MainPageButton(title: 'Цветной список'),
-            MainPageButton(title: 'Codelab'),
-            MainPageButton(title: 'Асинхронный запрос'),
+            MainPageButton(title: fourSquaresPageTitle),
+            MainPageButton(title: colorListPageTitle),
+            MainPageButton(title: codelabPageTitle),
+            MainPageButton(title: asyncRequestPagetitle),
           ],
         ),
       ),
@@ -53,17 +49,23 @@ class MainPageButton extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       child: ElevatedButton(
+        onPressed: () {},
         style: ButtonStyle(
           padding: MaterialStateProperty.all(const EdgeInsets.all(12)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(title, style: const TextStyle(color: black)),
-            const Icon(Icons.arrow_forward_outlined, color: black),
+            Text(
+              title, 
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+            Icon(
+              Icons.arrow_forward_outlined,
+              color: Theme.of(context).iconTheme.color,
+            ),
           ]
         ),
-        onPressed: () {},
       ),
     );
   }
