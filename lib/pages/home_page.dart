@@ -1,7 +1,6 @@
 import 'package:boost_grade/resources/colors.dart';
 import 'package:flutter/material.dart';
-
-import '../resources/pages_list.dart';
+import 'package:boost_grade/resources/pages_list.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -14,7 +13,7 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           title,
-          style: Theme.of(context).textTheme.titleLarge!.apply(
+          style: Theme.of(context).textTheme.titleLarge?.apply(
             shadows: [
               Shadow(
                 color: black.withOpacity(0.4),
