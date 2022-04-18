@@ -1,5 +1,6 @@
 import 'package:boost_grade/resources/colors.dart';
-import 'package:boost_grade/utils/rndm_color_gen.dart';
+import 'package:boost_grade/utils/colors_util.dart';
+import 'package:boost_grade/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class FourSquaresPage extends StatefulWidget {
@@ -33,26 +34,15 @@ class _FourSquaresPageState extends State<FourSquaresPage> {
           color: Theme.of(context).iconTheme.color,
         ),
       ),
-      body: Center(
-        child: GridView.count(
-          primary: false,
-          padding: const EdgeInsets.all(20),
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          crossAxisCount: 2,
-          children: <Widget>[
-            getGridTile(),
-            getGridTile(),
-            getGridTile(),
-            getGridTile(),
-          ],
-        )
+      body: CustomGridView(
+        childCount: 4,
+        child: _getGridTile(),
       ),
     );
   }
 }
 
-Widget getGridTile() {
+Widget _getGridTile() {
   return Container(
     padding: const EdgeInsets.all(8),
     color: getRandomColor()

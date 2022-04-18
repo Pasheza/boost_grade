@@ -1,5 +1,5 @@
-import 'package:boost_grade/pages/four_squares_page.dart';
 import 'package:boost_grade/resources/colors.dart';
+import 'package:boost_grade/resources/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:boost_grade/resources/pages_list.dart';
 
@@ -31,14 +31,9 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             MainPageButton(
               title: fourSquaresPageTitle,
-              onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const FourSquaresPage(title: fourSquaresPageTitle))
-                );
-              },
+              onPressed: () => _navigateTo(context, FourSquaresPageRoute()),
             ),
-            MainPageButton(title: colorListPageTitle, onPressed: (){},),
+            MainPageButton(title: colorListPageTitle, onPressed: (){}),
             MainPageButton(title: codelabPageTitle, onPressed: (){}),
             MainPageButton(title: asyncRequestPagetitle, onPressed: (){}),
           ],
@@ -83,4 +78,8 @@ class MainPageButton extends StatelessWidget {
       ),
     );
   }
+}
+
+void _navigateTo(BuildContext context, MaterialPageRoute route) {
+  Navigator.push(context, route);
 }
