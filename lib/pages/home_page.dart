@@ -1,4 +1,5 @@
 import 'package:boost_grade/resources/colors.dart';
+import 'package:boost_grade/resources/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:boost_grade/resources/pages_list.dart';
 
@@ -27,11 +28,14 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: const <Widget>[
-            MainPageButton(title: fourSquaresPageTitle),
-            MainPageButton(title: colorListPageTitle),
-            MainPageButton(title: codelabPageTitle),
-            MainPageButton(title: asyncRequestPagetitle),
+          children: <Widget>[
+            MainPageButton(
+              title: fourSquaresPageTitle,
+              onPressed: () => _navigateTo(context, FourSquaresPageRoute()),
+            ),
+            MainPageButton(title: colorListPageTitle, onPressed: (){}),
+            MainPageButton(title: codelabPageTitle, onPressed: (){}),
+            MainPageButton(title: asyncRequestPagetitle, onPressed: (){}),
           ],
         ),
       ),
@@ -41,14 +45,20 @@ class MyHomePage extends StatelessWidget {
 
 class MainPageButton extends StatelessWidget {
   final String title;
-  const MainPageButton({Key? key, required this.title}) : super(key: key);
+  final Function()? onPressed;
+
+  const MainPageButton({
+    Key? key, 
+    required this.title, 
+    required this.onPressed
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: ButtonStyle(
           padding: MaterialStateProperty.all(const EdgeInsets.all(12)),
         ),
@@ -68,4 +78,8 @@ class MainPageButton extends StatelessWidget {
       ),
     );
   }
+}
+
+void _navigateTo(BuildContext context, MaterialPageRoute route) {
+  Navigator.push(context, route);
 }
