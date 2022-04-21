@@ -67,3 +67,23 @@ class CustomFAB extends StatelessWidget {
     );
   }
 }
+
+class CustomListView extends StatelessWidget {
+
+  final List<Color> colorList;
+  const CustomListView({ Key? key, required this.colorList }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+        itemCount: colorList.length,
+        itemBuilder: (context, i) {
+          return Card(
+            child: ListTile(
+            tileColor: colorList[i],
+            ),
+          );
+        }
+      );
+  }
+}

@@ -14,6 +14,7 @@ class ColorListPage extends StatefulWidget {
 
 class _ColorListPageState extends State<ColorListPage> {
 
+  List<Color> _colors = getColorList(listCount);
 
   @override
   Widget build(BuildContext context) {
@@ -23,18 +24,13 @@ class _ColorListPageState extends State<ColorListPage> {
       ),
       floatingActionButton: CustomFAB(
         onPressed: () {
-          setState(() {});
+          setState(() {
+            _colors = getColorList(listCount);
+          });
         },
       ),
-      body: ListView.builder(
-        itemCount: listCount,
-        itemBuilder: (context, i) {
-          return Card(
-            child: ListTile(
-            tileColor: getRandomColor(),
-            ),
-          );
-        }
+      body: CustomListView(
+        colorList: _colors,
       )
     );
   }

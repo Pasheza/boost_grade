@@ -14,7 +14,7 @@ class FourSquaresPage extends StatefulWidget {
 
 class _FourSquaresPageState extends State<FourSquaresPage> {
 
-  List<Color> _colors = _getColorList();
+  List<Color> _colors = getColorList(squareCount);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class _FourSquaresPageState extends State<FourSquaresPage> {
       floatingActionButton: CustomFAB(
         onPressed: () {
           setState(() {
-            _colors = _getColorList();
+            _colors = getColorList(squareCount);
           });
         },
       ),
@@ -34,12 +34,4 @@ class _FourSquaresPageState extends State<FourSquaresPage> {
       ),
     );
   }
-}
-
-List<Color> _getColorList() {
-  List<Color> result = [];
-  for (int i=0; i<squareCount; i++) {
-    result.add(getRandomColor());
-  }
-  return result;
 }
