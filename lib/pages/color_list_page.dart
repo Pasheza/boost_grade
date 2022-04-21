@@ -1,6 +1,6 @@
 
-import 'package:boost_grade/resources/colors.dart';
 import 'package:boost_grade/utils/colors_util.dart';
+import 'package:boost_grade/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 const int listCount = 1000;
@@ -19,12 +19,8 @@ class _ColorListPageState extends State<ColorListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: Theme.of(context).iconTheme,
-        title: Text(
-          widget.title,
-          style: const TextStyle(color: black)
-        ),
+      appBar: CustonAppBar(
+        title: widget.title
       ),
       floatingActionButton: FloatingActionButton(
         shape: const RoundedRectangleBorder(

@@ -1,3 +1,4 @@
+import 'package:boost_grade/resources/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomGridView extends StatelessWidget {
@@ -25,4 +26,24 @@ class CustomGridView extends StatelessWidget {
       ),
     );
   }
+}
+
+class CustonAppBar extends StatelessWidget implements PreferredSizeWidget {
+
+  final String title;
+  const CustonAppBar({ Key? key, required this.title}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      iconTheme: Theme.of(context).iconTheme,
+      title: Text(
+        title,
+        style: const TextStyle(color: black)
+      ),
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

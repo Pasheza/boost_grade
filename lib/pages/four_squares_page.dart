@@ -20,12 +20,8 @@ class _FourSquaresPageState extends State<FourSquaresPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: Theme.of(context).iconTheme,
-        title: Text(
-          widget.title, 
-          style: const TextStyle(color: black)
-        ),
+      appBar: CustonAppBar(
+        title: widget.title
       ),
       floatingActionButton: FloatingActionButton(
         shape: const RoundedRectangleBorder(
@@ -43,7 +39,6 @@ class _FourSquaresPageState extends State<FourSquaresPage> {
       ),
       body: CustomGridView(
         colorList: _colors,
-        
       ),
     );
   }
