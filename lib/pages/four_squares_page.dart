@@ -19,7 +19,7 @@ class _FourSquaresPageState extends State<FourSquaresPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustonAppBar(
+      appBar: CustomAppBar(
         title: widget.title
       ),
       floatingActionButton: CustomFAB(

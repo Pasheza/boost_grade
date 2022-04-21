@@ -19,7 +19,7 @@ class _ColorListPageState extends State<ColorListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustonAppBar(
+      appBar: CustomAppBar(
         title: widget.title
       ),
       floatingActionButton: CustomFAB(

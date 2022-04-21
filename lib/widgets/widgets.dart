@@ -28,10 +28,10 @@ class CustomGridView extends StatelessWidget {
   }
 }
 
-class CustonAppBar extends StatelessWidget implements PreferredSizeWidget {
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   final String title;
-  const CustonAppBar({ Key? key, required this.title}) : super(key: key);
+  const CustomAppBar({ Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
