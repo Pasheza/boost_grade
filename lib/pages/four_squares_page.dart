@@ -1,4 +1,3 @@
-import 'package:boost_grade/resources/colors.dart';
 import 'package:boost_grade/utils/colors_util.dart';
 import 'package:boost_grade/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -23,19 +22,12 @@ class _FourSquaresPageState extends State<FourSquaresPage> {
       appBar: CustonAppBar(
         title: widget.title
       ),
-      floatingActionButton: FloatingActionButton(
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(15)),
-        ),
-        onPressed: (){
+      floatingActionButton: CustomFAB(
+        onPressed: () {
           setState(() {
             _colors = _getColorList();
           });
         },
-        child: Icon(
-          Icons.create,
-          color: Theme.of(context).iconTheme.color,
-        ),
       ),
       body: CustomGridView(
         colorList: _colors,

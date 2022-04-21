@@ -47,3 +47,23 @@ class CustonAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
+
+class CustomFAB extends StatelessWidget {
+
+  final Function()? onPressed;
+  const CustomFAB({ Key? key, required this.onPressed }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(15)),
+      ),
+      onPressed: onPressed,
+      child: Icon(
+        Icons.create,
+        color: Theme.of(context).iconTheme.color,
+      ),
+    );
+  }
+}
