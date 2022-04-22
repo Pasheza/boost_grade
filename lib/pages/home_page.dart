@@ -33,7 +33,10 @@ class MyHomePage extends StatelessWidget {
               title: fourSquaresPageTitle,
               onPressed: () => _navigateTo(context, FourSquaresPageRoute()),
             ),
-            MainPageButton(title: colorListPageTitle, onPressed: (){}),
+            MainPageButton(
+              title: colorListPageTitle,
+              onPressed: () => _navigateTo(context, ColorListPageRoute())
+            ),
             MainPageButton(title: codelabPageTitle, onPressed: (){}),
             MainPageButton(title: asyncRequestPagetitle, onPressed: (){}),
           ],

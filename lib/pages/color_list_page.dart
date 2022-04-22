@@ -2,19 +2,19 @@ import 'package:boost_grade/utils/colors_util.dart';
 import 'package:boost_grade/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
-const int squareCount = 4;
+const int listCount = 1000;
 
-class FourSquaresPage extends StatefulWidget {
-  const FourSquaresPage({Key? key, required this.title}) : super(key: key);
+class ColorListPage extends StatefulWidget {
+  const ColorListPage({ Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
-  State<FourSquaresPage> createState() => _FourSquaresPageState();
+  State<ColorListPage> createState() => _ColorListPageState();
 }
 
-class _FourSquaresPageState extends State<FourSquaresPage> {
+class _ColorListPageState extends State<ColorListPage> {
 
-  List<Color> _colors = getColorList(squareCount);
+  List<Color> _colors = getColorList(listCount);
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +25,14 @@ class _FourSquaresPageState extends State<FourSquaresPage> {
       floatingActionButton: CustomFAB(
         onPressed: () {
           setState(() {
-            _colors = getColorList(squareCount);
+            _colors = getColorList(listCount);
           });
         },
       ),
-      body: CustomGridView(
+      body: CustomListView(
         colorList: _colors,
-      ),
+      )
     );
   }
 }
+
