@@ -37,7 +37,10 @@ class MyHomePage extends StatelessWidget {
               title: colorListPageTitle,
               onPressed: () => _navigateTo(context, ColorListPageRoute())
             ),
-            MainPageButton(title: codelabPageTitle, onPressed: (){}),
+            MainPageButton(
+              title: codelabPageTitle,
+              onPressed: () => _navigateTo(context, CodelabPageRoute())
+            ),
             MainPageButton(title: asyncRequestPagetitle, onPressed: (){}),
           ],
         ),
