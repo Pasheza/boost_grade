@@ -1,3 +1,4 @@
+import 'package:boost_grade/pages/codelab_page.dart';
 import 'package:boost_grade/pages/color_list_page.dart';
 import 'package:boost_grade/pages/four_squares_page.dart';
 import 'package:boost_grade/resources/pages_list.dart';
@@ -14,5 +15,11 @@ class ColorListPageRoute extends MaterialPageRoute {
   
   ColorListPageRoute() : super(
     builder: (context) => const ColorListPage(title: colorListPageTitle)
+  );
+}
+
+class CodelabPageRoute extends MaterialPageRoute {
+  CodelabPageRoute() : super(
+    builder: (context) => const CodelabPage()
   );
 }
